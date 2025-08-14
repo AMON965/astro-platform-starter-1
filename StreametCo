@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream&Co - Abonnements Premium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e50914, #111);
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header img {
+            width: 80px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-bottom: 10px;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .offers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .offer {
+            background: linear-gradient(145deg, #111, #1a1a1a);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e50914;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .offer img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .offer h2 {
+            margin-bottom: 10px;
+            color: #e50914;
+        }
+
+        .price {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #111;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: gray;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Logo Stream&Co -->
+        <img src="https://i.ibb.co/2WvPLfS/streamco-logo.png" alt="Logo Stream&Co">
+        <h1>Stream&Co</h1>
+        <p>Vos abonnements premium au meilleur prix</p>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align:center;">Nos Offres</h2>
+        <div class="offers">
+            <div class="offer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_N_logo.svg" alt="Netflix">
+                <h2>Netflix Premium</h2>
+                <p class="price">3 500 FCFA / mois</p>
+                <a href="https://wa.me/2250700000000" class="btn">Commander sur WhatsApp</a>
+            </div>
+            <div class="offer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+                <h2>Spotify Premium</h2>
+                <p class="price">2 000 FCFA / mois</p>
+                <a href="https://wa.me/2250700000000" class="btn">Commander sur WhatsApp</a>
+            </div>
+            <div class="offer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime Video">
+                <h2>Prime Vidéo</h2>
+                <p class="price">4 500 FCFA / mois</p>
+                <a href="https://wa.me/2250700000000" class="btn">Commander sur WhatsApp</a>
+            </div>
+            <div class="offer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Snapchat_logo.svg" alt="Snapchat+">
+                <h2>Snapchat+</h2>
+                <p class="price">1 500 FCFA / mois</p>
+                <a href="https://wa.me/2250700000000" class="btn">Commander sur WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Stream&Co - Tous droits réservés
+    </footer>
+
+    <script>
+        // Effet d'apparition au défilement
+        const offers = document.querySelectorAll('.offer');
+
+        const revealOnScroll = () => {
+            offers.forEach(offer => {
+                const rect = offer.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    offer.style.opacity = 1;
+                    offer.style.transform = "translateY(0)";
+                    offer.style.transition = "all 0.6s ease-out";
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
